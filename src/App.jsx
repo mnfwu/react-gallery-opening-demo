@@ -1,44 +1,35 @@
 import React, { useState } from 'react'
-import logo from './logo.svg'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import ImageBox from './components/ImageSection/ImageBox'
 import './App.css'
+
+const matrix = [
+  [0,0], [1,0], [2,0], [3,0],
+  [0,1], [1,1], [2,1], [3,1],
+  [0,2], [1,2], [2,2], [3,2],
+  [0,3], [1,3], [2,3], [3,3],
+  [0,4], [1,4], [2,4], [3,4],
+  [0,5], [1,5], [2,5], [3,5],
+  [0,6], [1,6], [2,6], [3,6]
+]
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p className="font-bold">
-          Edit <code>App.jsx</code> and save to test HMR updates
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <main>
+      <Header />
+      <Footer />
+      <div className="wrapper">
+        <div className="image-container">
+          {matrix.map(([x,y], index) => (
+            <ImageBox key={index} x={x} y={y} />
+          ))}
+        </div>
+      </div>
+      
+    </main>
   )
 }
 

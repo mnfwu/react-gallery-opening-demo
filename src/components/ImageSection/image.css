@@ -1,0 +1,23 @@
+/* .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; 
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    height: 400px;
+    width: 600px;
+} */
+
+.image {
+    background-image: url('./static/de_kooning.jpeg');
+    background-size: 400px 600px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
