@@ -1,6 +1,30 @@
 import styled from "styled-components";
 import image from './static/de_kooning.jpeg'
 
+export const Wrapper = styled.section.attrs(({$color}) => ({
+    style: {
+        backgroundColor: `hsl(${$color}, 79%, 53%)`,
+    },
+}))`
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+`
+
+export const ImageContainer = styled.div.attrs(({$isTogether}) => ({
+    style: {
+        animation: $isTogether ? 'glow 3s infinite alternate' : 'none',
+    },
+}))`
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    height: 500px;
+    width: 500px;
+`
+
 export const Image = styled.div.attrs(({$movedX, $movedY}) => ({
     style: {
         transform: `translate(${$movedX}px, ${$movedY}px)`

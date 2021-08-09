@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import ImageBox from './components/ImageSection/ImageBox'
+import { Wrapper, ImageContainer} from './components/ImageSection/styles'
+
 import './App.css'
 
 const matrix = [
@@ -51,14 +53,17 @@ function App() {
     <main>
       <Header />
       <Footer />
-      <div className="wrapper" onMouseMove={handleMove} onTouchMove={handleTouchMove}>
-        <div className="image-container">
+      <Wrapper
+        onMouseMove={handleMove}
+        onTouchMove={handleTouchMove}
+        $color={Math.round(240 - distance * 40)}
+      >
+        <ImageContainer $isTogether={distance < 0.001}>
           {matrix.map(([x,y], index) => (
             <ImageBox key={index} x={x} y={y} percent={distance} />
           ))}
-        </div>
-      </div>
-      
+        </ImageContainer>
+      </Wrapper>
     </main>
   )
 }
