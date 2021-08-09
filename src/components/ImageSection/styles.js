@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from './static/de_kooning.jpeg'
+import image from './static/de_kooning.jpeg';
 
 export const Wrapper = styled.section.attrs(({$color}) => ({
     style: {

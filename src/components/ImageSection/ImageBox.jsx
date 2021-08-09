@@ -9,8 +9,6 @@ const ImageBox = ({x, y, percent}) => {
         setPosition([Math.random() * 500 - x * 100 - 50, Math.random() * 500 - y * 100 - 50])
     }, [x, y])
 
-    console.log(position)
-
     return(
         <Image $initialX={x} $initialY={y} $movedX={position[0] * percent} $movedY={position[1] * percent} />
     )
