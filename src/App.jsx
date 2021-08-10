@@ -50,21 +50,17 @@ function App() {
   }
 
   const handleClick = () => {
-    console.log('click')
-    setBgColor(Math.floor(Math.random()) * 240)
+    setBgColor(Math.floor(Math.random() * 240))
   }
-
-  // onClick={()=> toggleActive(active === 'inactive' ? active = 'active' : active = 'inactive')
 
   return (
     <main>
       <Header />
-      {/* <NextButton onClick={setBgColor} /> */}
+      <NextButton next={handleClick} />
       <Footer />
       <Wrapper
         onMouseMove={handleMove}
         onTouchMove={handleTouchMove}
-        // $color={Math.round(240 - distance * 40)}
         $color={bgColor}
       >
         <ImageContainer $isTogether={distance < 0.001}>
