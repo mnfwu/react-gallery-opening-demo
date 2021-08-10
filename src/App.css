@@ -31,17 +31,17 @@ body {
   width: 500px;
 }
 
-.divider::after {
+/* .divider::after {
   content: '';
   background-color: #fbfbfb;
   display: block;
   position: absolute;
   height: 2px;
-  left: 60px;
-  right: 60px;
+  left: 20rem;
+  right: 20rem;
   top: 55%;
   opacity: 0.3;
-}
+} */
 
 .pointer-events-none {
   pointer-events: none;

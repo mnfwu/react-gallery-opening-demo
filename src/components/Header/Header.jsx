@@ -2,9 +2,11 @@ import React from 'react'
 
 const Header = () => {
     return(
-        <header className="pointer-events-none text-8xl text-center absolute top-5 left-1/4 z-10">
-            <span className="">ANALOGUE</span>
-            <span className="font-serif text-7xl">Space</span>
+        <header className="pointer-events-none text-8xl text-center absolute w-full top-5 z-10">
+            <div className="flex justify-center items-end">
+                <span className="">ANALOGUE</span>
+                <span className="font-serif text-7xl">Space</span>
+            </div>
         </header>
     )
 }
