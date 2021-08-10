@@ -57,28 +57,40 @@ function App() {
   }
 
   const handlePaintingUrlClick = () => {
-    console.log('connected')
-    if (paintingNum === 3) {
+    if (paintingNum === 6) {
       setPaintingNum(1)
     } else {
       setPaintingNum(paintingNum + 1)
     }
-    
     switch(paintingNum) {
       case 1:
+        // orange hue painting
         setBgColor(240)
         break;
       case 2:
-        setBgColor(160)
+        // black painting
+        setBgColor(330)
         break;
       case 3:
-        setBgColor(330)
+        // yellow painting
+        setBgColor(285)
+        break;
+      case 4:
+        // greenish-teal painting
+        setBgColor(15)
+        break;
+      case 5:
+        // red-yellow-green painting
+        setBgColor(262)
+        break;
+      case 6:
+        // reddish-gray painting
+        setBgColor(145)
         break;
       default:
         setBgColor(240)
     }
-
-    let Url = `src/components/ImageSection/static/de_kooning${paintingNum}.jpeg`
+    const Url = `src/components/ImageSection/static/de_kooning${paintingNum}.jpeg`
     setPaintingUrl(Url)
   }
 
