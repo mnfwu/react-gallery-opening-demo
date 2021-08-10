@@ -28,7 +28,10 @@ const matrix = [
 
 function App() {
   const [distance, setDistance] = useState(1);
-  const [bgColor, setBgColor] = useState(240)
+  const [bgColor, setBgColor] = useState(240);
+  const [paintingNum, setPaintingNum] = useState(1);
+  const [paintingUrl, setPaintingUrl] = useState('src/components/ImageSection/static/de_kooning1.jpeg');
+  
 
   const easing = (num) => Math.pow(num, 3);
 
@@ -49,14 +52,40 @@ function App() {
     calculateDistance([touches[0].clientX, touches[0].clientY])
   }
 
-  const handleClick = () => {
+  const handleRandomBgClick = () => {
     setBgColor(Math.floor(Math.random() * 240))
+  }
+
+  const handlePaintingUrlClick = () => {
+    console.log('connected')
+    if (paintingNum === 3) {
+      setPaintingNum(1)
+    } else {
+      setPaintingNum(paintingNum + 1)
+    }
+    
+    switch(paintingNum) {
+      case 1:
+        setBgColor(240)
+        break;
+      case 2:
+        setBgColor(160)
+        break;
+      case 3:
+        setBgColor(330)
+        break;
+      default:
+        setBgColor(240)
+    }
+
+    let Url = `src/components/ImageSection/static/de_kooning${paintingNum}.jpeg`
+    setPaintingUrl(Url)
   }
 
   return (
     <main>
       <Header />
-      <NextButton next={handleClick} />
+      <NextButton next={handlePaintingUrlClick} />
       <Footer />
       <Wrapper
         onMouseMove={handleMove}
@@ -65,7 +94,7 @@ function App() {
       >
         <ImageContainer $isTogether={distance < 0.001}>
           {matrix.map(([x,y], index) => (
-            <ImageBox key={index} x={x} y={y} percent={distance} />
+            <ImageBox key={index} x={x} y={y} percent={distance} url={paintingUrl} />
           ))}
         </ImageContainer>
       </Wrapper>

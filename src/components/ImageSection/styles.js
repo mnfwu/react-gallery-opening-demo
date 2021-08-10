@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import image from './static/de_kooning.jpeg';
 
 export const Wrapper = styled.section.attrs(({$color}) => ({
     style: {
@@ -25,12 +24,12 @@ export const ImageContainer = styled.div.attrs(({$isTogether}) => ({
     width: 500px;
 `
 
-export const Image = styled.div.attrs(({$movedX, $movedY}) => ({
+export const Image = styled.div.attrs(({$movedX, $movedY, $url}) => ({
     style: {
-        transform: `translate(${$movedX}px, ${$movedY}px)`
+        transform: `translate(${$movedX}px, ${$movedY}px)`,
+        backgroundImage: `url(${$url})`
     }
 }))`
-    background-image: url(${image});
     background-size: 500px 500px;
     height: 100px;
     width: 100px;
