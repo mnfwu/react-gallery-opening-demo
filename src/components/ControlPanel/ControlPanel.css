@@ -4,6 +4,20 @@
 }
 
 .container-unhide {
-    transform:translateX(0);
-    transition: 500ms ease-in-out;
+    animation: unhide 500ms linear 1s;
+    /* transform: translateX(0); */
+    /* transition: 500ms ease-in-out; */
+}
+
+/* .transition-settings {
+    transition: all 0.5s ease
+} */
+
+@keyframes unhide {
+    from {
+        transform: translateX(-5rem);
+    }
+    to {
+        transform: translateX(0);
+    }
 }

@@ -10,7 +10,7 @@ const ButtonContainer = (props) => {
         hideContainer ? setContainerPosition('left-0 top-10 container-unhide') : setContainerPosition('container-hide top-10')
     }
 
-    let containerStyles = containerPosition + 'bg-transparent border border-gray-800 shadow-xl w-48 h-20 absolute left-0 top-32 z-10'
+    let containerStyles = containerPosition + 'transition-settings bg-transparent border border-gray-800 shadow-xl w-48 h-20 absolute left-0 top-32 z-10'
 
     return (
         <div className={containerStyles}>
