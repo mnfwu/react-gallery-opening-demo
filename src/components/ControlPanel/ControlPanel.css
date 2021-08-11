@@ -1,0 +1,9 @@
+.container-hide {
+    transform: translateX(-5rem);
+    transition: 500ms ease-in-out;
+}
+
+.container-unhide {
+    transform:translateX(0);
+    transition: 500ms ease-in-out;
+}

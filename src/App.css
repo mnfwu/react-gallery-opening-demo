@@ -56,6 +56,10 @@ body {
   }
 }
 
+.container-hide {
+  left: -3rem;
+}
+
 /* react default styles */
 
 @media (prefers-reduced-motion: no-preference) {

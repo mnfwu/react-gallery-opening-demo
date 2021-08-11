@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import ImageBox from './components/ImageSection/ImageBox'
-import NextButton from './components/NextButton/NextButton'
+import ButtonContainer from './components/ControlPanel/ButtonContainer'
+import NextButton from './components/ControlPanel/NextButton'
 import { Wrapper, ImageContainer} from './components/ImageSection/styles'
 
 import './App.css'
@@ -97,7 +98,9 @@ function App() {
   return (
     <main>
       <Header />
-      <NextButton next={handlePaintingUrlClick} />
+      <ButtonContainer> 
+        <NextButton next={handlePaintingUrlClick} />
+      </ButtonContainer>
       <Footer />
       <Wrapper
         onMouseMove={handleMove}
