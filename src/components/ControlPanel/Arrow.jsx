@@ -3,9 +3,9 @@ import React from 'react'
 const Arrow = (props) => {
     let classes = ""
     if (props.direction === 'left') {
-        classes = "transform"
+        classes = "transform transition duration-500 ease-in-out"
     } else {
-        classes = "transform rotate-180"
+        classes = "transform rotate-180 transition duration-500 ease-in-out"
     }
 
     return (

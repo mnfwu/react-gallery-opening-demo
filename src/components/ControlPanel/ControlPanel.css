@@ -1,17 +1,7 @@
 .container-hide {
     transform: translateX(-5rem);
-    transition: 500ms ease-in-out;
 }
 
-.container-unhide {
-    animation: unhide 500ms linear 1s;
-    /* transform: translateX(0); */
-    /* transition: 500ms ease-in-out; */
-}
-
-/* .transition-settings {
-    transition: all 0.5s ease
-} */
 
 @keyframes unhide {
     from {

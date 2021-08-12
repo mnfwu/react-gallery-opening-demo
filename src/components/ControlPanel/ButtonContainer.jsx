@@ -9,21 +9,21 @@ const ButtonContainer = (props) => {
     
     const handleClick = () => {
         setHideContainer(!hideContainer);
-        hideContainer ? setContainerPosition('left-0 top-10 container-unhide') : setContainerPosition('container-hide top-10')
+        hideContainer ? setContainerPosition('left-0 top-10') : setContainerPosition('container-hide top-10')
         hideContainer ? setArrowDirection('left') : setArrowDirection('right')
     }
 
-    let containerStyles = containerPosition + 'transition-settings bg-transparent border border-gray-800 shadow-xl w-48 h-20 absolute left-0 top-32 z-10'
+    let containerStyles = containerPosition + 'transition duration-500 ease-in-out bg-transparent border border-gray-800 shadow-xl w-48 h-20 absolute left-0 top-32 z-10'
 
     return (
         <div className={containerStyles}>
-            <div className="flex justify-between items-center px-2 h-full">
+            <div className="flex justify-between items-center px-3 h-full">
                 <div className="flex justify-center items-center">
                     {props.children}
                 </div>
                 <div>
                     <button onClick={handleClick}>
-                        <Arrow className="" direction={arrowDirection} />
+                        <Arrow direction={arrowDirection} />
                     </button>
                 </div>
             </div>
