@@ -13,7 +13,7 @@ const ButtonContainer = (props) => {
         hideContainer ? setArrowDirection('left') : setArrowDirection('right')
     }
 
-    let containerStyles = containerPosition + 'transition duration-500 ease-in-out bg-transparent border border-gray-800 shadow-xl w-52 h-20 absolute left-0 top-32 z-10'
+    let containerStyles = containerPosition + 'transition duration-500 ease-in-out bg-gray-800 shadow-xl w-52 h-20 absolute left-0 top-32 z-10'
 
     return (
         <div className={containerStyles}>
