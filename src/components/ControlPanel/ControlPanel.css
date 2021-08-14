@@ -1,7 +1,6 @@
 .container-hide {
-    transform: translateX(-5rem);
+    transform: translateX(-8rem);
 }
-
 
 @keyframes unhide {
     from {
