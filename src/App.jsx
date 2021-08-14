@@ -4,7 +4,9 @@ import Footer from './components/Footer/Footer'
 import ImageBox from './components/ImageSection/ImageBox'
 import ButtonContainer from './components/ControlPanel/ButtonContainer'
 import NextButton from './components/ControlPanel/NextButton'
+import Modal from './components/Modal/Modal'
 import { Wrapper, ImageContainer} from './components/ImageSection/styles'
+import { Button } from './components/UI/button.js'
 
 import './App.css'
 
@@ -32,7 +34,7 @@ function App() {
   const [bgColor, setBgColor] = useState(240);
   const [paintingNum, setPaintingNum] = useState(1);
   const [paintingUrl, setPaintingUrl] = useState('src/components/ImageSection/static/de_kooning1.jpeg');
-  
+  const [showModal, setShowModal] = useState(false);
 
   const easing = (num) => Math.pow(num, 3);
 
@@ -95,8 +97,13 @@ function App() {
     setPaintingUrl(Url)
   }
 
+  const toggleModal = () => {
+    setShowModal((showModal) => !showModal)
+  }
+
   return (
     <main>
+      {showModal && <Modal toggleModal={toggleModal} />}
       <Header />
       <ButtonContainer> 
         <NextButton next={handlePaintingUrlClick} />
@@ -107,6 +114,7 @@ function App() {
         onTouchMove={handleTouchMove}
         $color={bgColor}
       >
+        <Button onClick={toggleModal}>Sign up for updates</Button>
         <ImageContainer $isTogether={distance < 0.001}>
           {matrix.map(([x,y], index) => (
             <ImageBox key={index} x={x} y={y} percent={distance} url={paintingUrl} />
