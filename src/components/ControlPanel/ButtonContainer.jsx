@@ -17,7 +17,7 @@ const ButtonContainer = (props) => {
 
   let containerStyles =
     containerPosition +
-    'transition duration-500 ease-in-out bg-gray-800 shadow-xl w-52 py-4 absolute left-0 top-32 z-10';
+    'transition duration-500 ease-in-out bg-gray-800 shadow-xl w-52 py-4 absolute left-0 top-32 z-10 opacity-80 hover:opacity-100';
 
   return (
     <div className={containerStyles}>

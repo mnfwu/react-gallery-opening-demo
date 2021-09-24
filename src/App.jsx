@@ -3,11 +3,10 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ImageBox from './components/ImageSection/ImageBox';
 import ButtonContainer from './components/ControlPanel/ButtonContainer';
-import NextButton from './components/ControlPanel/NextButton';
+import Button from './components/ControlPanel/Button';
 import AboutButton from './components/ControlPanel/AboutButton';
 import Modal from './components/Modal/Modal';
 import { Wrapper, ImageContainer } from './components/ImageSection/styles';
-import { Button } from './components/UI/button.js';
 
 import './App.css';
 
@@ -41,7 +40,7 @@ const matrix = [
 
 function App() {
   const [distance, setDistance] = useState(1);
-  const [bgColor, setBgColor] = useState(240);
+  const [bgColor, setBgColor] = useState(325);
   const [paintingNum, setPaintingNum] = useState(1);
   const [paintingUrl, setPaintingUrl] = useState(
     'src/components/ImageSection/static/de_kooning1.jpeg'
@@ -67,24 +66,24 @@ function App() {
     calculateDistance([touches[0].clientX, touches[0].clientY]);
   };
 
-  const handleRandomBgClick = () => {
-    setBgColor(Math.floor(Math.random() * 240));
-  };
-
   const handlePaintingUrlClick = () => {
+    console.log('before', paintingNum);
+
     if (paintingNum === 6) {
       setPaintingNum(1);
     } else {
+      console.log('else running');
       setPaintingNum(paintingNum + 1);
     }
+
     switch (paintingNum) {
       case 1:
         // orange hue painting
-        setBgColor(240);
+        setBgColor(325);
         break;
       case 2:
         // black painting
-        setBgColor(330);
+        setBgColor(240);
         break;
       case 3:
         // yellow painting
@@ -105,6 +104,7 @@ function App() {
       default:
         setBgColor(240);
     }
+    console.log('after', paintingNum);
     const Url = `src/components/ImageSection/static/de_kooning${paintingNum}.jpeg`;
     setPaintingUrl(Url);
   };
@@ -118,8 +118,8 @@ function App() {
       {showModal && <Modal toggleModal={toggleModal} />}
       <Header />
       <ButtonContainer>
-        <NextButton next={handlePaintingUrlClick} />
-        <AboutButton action={toggleModal} />
+        <Button action={handlePaintingUrlClick} text='Next' />
+        <Button action={toggleModal} text='About' />
       </ButtonContainer>
       <Footer />
       <Wrapper onMouseMove={handleMove} onTouchMove={handleTouchMove} $color={bgColor}>
